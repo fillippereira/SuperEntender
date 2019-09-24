@@ -1,0 +1,99 @@
+﻿
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body class="p-0 h-100">
+    
+
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-2 h-100 p-0">
+                <nav class="nav navbar-dark bg-dark h-100">
+                    <div class="container-fluid h-100">
+                        <div class="navbar-header text-center pt-3 pb-2" style="border-bottom:1px solid white">
+                            <h4 class="text-light">Monitoria</h4>
+
+                        </div>
+                        <div class="row mt-3 mb-5">
+                            <div class="col-md-4">
+                                <img class="img-responsive rounded m-0 w-100" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
+                            </div>
+                            <div class="col-md-4">
+                                @if (Session["Nome"] != null)
+                                {
+                                    <span class="d-block text-light">@Session["Nome"].ToString()</span>
+                                    <span class="d-block text-muted">@Session["Cargo"].ToString()</span>
+                                }
+                                else
+                                {
+                                    <span class="d-block text-light">Convidado</span>
+                                    <span class="d-block text-muted">Cargo</span>
+                                }
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-12 pl-0"><span class="text-muted">Menu</span></div>
+                        <ul class="navbar-nav" style="border-top:1px solid white">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/"><i class="fa fa-dashboard"></i> Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/Usuario/"><i class="fa fa-group"></i> Gerenciar Usuários</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/Usuario/"><i class="fa fa-headphones"></i> Calibrador Expert</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="/Usuario/"><i class="fa fa-file"></i> Relatório</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-10 p-0">
+                <div class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <h4>@ViewContext.RouteData.Values["Controller"]</h4>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav"></ul>
+                        </div>
+                        <ul class="navbar-nav ml-auto mr-2">
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-bell"></i><span class="badge badge-pill badge-danger" style="position:relative;left:-4px;top:-10px">1</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-envelope"></i></a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    <img class="img-responsive rounded m-0" style="width: 30px" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
+                                  
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Usuario/Details/@Session["IdUsuario"]"><i class="fa fa-user"></i> Meu perfil </a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-cog"></i> Configurações</a>
+                                    <a class="dropdown-item" href="/Account/LogOff"><i class="fa fa-sign-out"></i> Sair</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                @RenderBody()
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
