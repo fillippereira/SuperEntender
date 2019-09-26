@@ -17,8 +17,8 @@ namespace Monitoria.Models
         [Display(Name = "Senha")]
         public string Senha { get; set; }
 
-        [Display(Name = "Lembrar-me?")]
-        public bool LembrarMe { get; set; }
+        //[Display(Name = "Lembrar-me?")]
+        //public bool LembrarMe { get; set; }
     }
 
     public class ForgotPaswordModel
@@ -50,6 +50,8 @@ namespace Monitoria.Models
         [Required]
         public string Nome { get; set; }
         [Required]
+        public string Genero { get; set; }
+        [Required]
         public string Login { get; set; }
         [EmailAddress]
         public string Email { get; set; }
@@ -63,8 +65,11 @@ namespace Monitoria.Models
         [Compare("Senha", ErrorMessage = "A senha e a senha de confirmação não correspondem.")]
         public string ConfirmaSenha { get; set; }
         [Required]
-        public string Cargo { get; set; }
-       
-        
+        public Cargo Cargo { get; set; }
+
+        public List<Cargo> ListaCargo { get; set; }
+        public int Status { get; set; }
+
+
     }
 }

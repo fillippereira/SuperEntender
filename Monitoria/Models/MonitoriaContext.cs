@@ -28,5 +28,7 @@ namespace Monitoria.Models
         public System.Data.Entity.DbSet<Monitoria.Areas.Monitoria.Models.Pergunta> Perguntas { get; set; }
 
         public System.Data.Entity.DbSet<Monitoria.Areas.Monitoria.Models.Resposta> Respostas { get; set; }
+
+        public System.Data.Entity.DbSet<Monitoria.Models.Cargo> Cargos { get; set; }
     }
 }

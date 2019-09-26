@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,6 +19,8 @@ namespace Monitoria.Models
         [Required]
         public string Nome { get; set; }
         [Required]
+        public string Genero { get; set; }
+        [Required]
         public string Login { get; set; }
         [EmailAddress]
         public string Email { get; set; }
@@ -26,8 +29,14 @@ namespace Monitoria.Models
         [DataType(DataType.Password)]
         public string Senha { get; set; }
         [Required]
-        public string Cargo { get; set; }
-        public bool LembrarMe { get; set; }
+        //[ForeignKey("Cargos")]
+        public int IdCargo { get; set; }
+        
+        public virtual Cargo Cargo { get; set; }
+        [Required]
+        public int Status { get; set; }
+        [Required]
+        public int PrimeiroAcesso { get; set; }
         public string IdSession { get; set; }
 
         public Usuario()
@@ -40,8 +49,8 @@ namespace Monitoria.Models
            
         }
 
-        
-      
+    
+
 
     }
 }

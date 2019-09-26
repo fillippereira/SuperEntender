@@ -52,7 +52,7 @@ namespace Monitoria.Controllers
                             }
                             Session["IdUsuario"] = vLogin.IdUsuario;
                             Session["Nome"] = vLogin.Nome;
-                            Session["Cargo"] = vLogin.Cargo;
+                            Session["Cargo"] = vLogin.Cargo.NomeCargo;
                             return RedirectToAction("Index", "Home");
                         }
 
@@ -85,6 +85,8 @@ namespace Monitoria.Controllers
         // GET: Account/Register
         public ActionResult Register()
         {
+
+            ViewBag.Cargos = new SelectList(db.Cargos.ToList(),"IdCargo","NomeCargo");
             return View();
         }
 
@@ -93,8 +95,10 @@ namespace Monitoria.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(RegisterModel model/*, IEnumerable<SelectListItem>  ListaCargos*/)
         {
+            //Response.Write("<script>alert('"+model.Cargo+"'</script>");
+            //Response.End();
             if (ModelState.IsValid)
             {
                 /// cria um novo usuario com os dados vindos do formulario
@@ -102,10 +106,14 @@ namespace Monitoria.Controllers
                 {
                     Cpf = model.Cpf,
                     Nome = model.Nome,
+                    Genero = model.Genero,
                     Login = model.Login,
                     Email = model.Email,
                     Senha = model.Senha,
-                    Cargo = model.Cargo
+                    //Cargo = ListaCargos,
+                    Status = 1,
+                    PrimeiroAcesso = 0
+
                 });
 
                 try

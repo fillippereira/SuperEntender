@@ -49,7 +49,7 @@ namespace Monitoria.Models
         {
             MonitoriaContext db = new MonitoriaContext();
 
-            string sRoles = db.Usuario.Where(model => model.Email == username).FirstOrDefault().Cargo;
+            string sRoles = db.Usuario.Where(model => model.Email == username).FirstOrDefault().Cargo.NomeCargo;
             string[] retorno = { sRoles };
             return retorno;
 
