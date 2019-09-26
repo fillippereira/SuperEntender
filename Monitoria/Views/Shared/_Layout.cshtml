@@ -11,7 +11,7 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body class="p-0 h-100">
-    
+
 
     <div class="container-fluid h-100">
         <div class="row h-100">
@@ -53,8 +53,17 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="/Usuario/"><i class="fa fa-headphones"></i> Calibrador Expert</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="/Usuario/"><i class="fa fa-file"></i> Relatório</a>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+                                    <i class="fa fa-file"></i> Gerenciar Formulários
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Monitoria/Ficha"> Fichas </a>
+                                    <a class="dropdown-item" href="/Monitoria/Bloco">Blocos</a>
+                                    <a class="dropdown-item" href="/Monitoria/Pergunta">Perguntas</a>
+                                    <a class="dropdown-item" href="/Monitoria/Resposta">Respostas</a>
+                                </div>
                             </li>
 
                         </ul>
@@ -76,7 +85,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                     <img class="img-responsive rounded m-0" style="width: 30px" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
-                                  
+
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/Usuario/Details/@Session["IdUsuario"]"><i class="fa fa-user"></i> Meu perfil </a>
@@ -94,6 +103,8 @@
     </div>
 
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>

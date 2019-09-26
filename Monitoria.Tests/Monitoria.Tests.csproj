@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Monitoria\SuperEntender.csproj">
+    <ProjectReference Include="..\Monitoria\Monitoria.csproj">
       <Project>{85629003-457D-4910-AAFC-B446759990FE}</Project>
-      <Name>SuperEntender</Name>
+      <Name>Monitoria</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperEntender", "Monitoria\SuperEntender.csproj", "{85629003-457D-4910-AAFC-B446759990FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitoria", "Monitoria\Monitoria.csproj", "{85629003-457D-4910-AAFC-B446759990FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitoria.Tests", "Monitoria.Tests\Monitoria.Tests.csproj", "{E713AB47-ECB4-4118-A56C-5D6EAD458C21}"
 EndProject

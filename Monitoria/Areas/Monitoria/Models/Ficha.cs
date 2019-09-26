@@ -19,8 +19,8 @@ namespace Monitoria.Areas.Monitoria.Models
         public string Tipo { get; set; }
         [Required]
         public int Status { get; set; }
-        [Required]
-        public List<Bloco> Blocos { get; set; }
+       /* [Required]
+        public List<Bloco> Blocos { get; set; }*/
 
 
         public Ficha()
@@ -28,13 +28,9 @@ namespace Monitoria.Areas.Monitoria.Models
 
         }
 
-        public Ficha(int idFicha, string nome, string produto, string tipo, int status)
+        public Ficha(Ficha ficha)
         {
-            IdFicha = idFicha;
-            Nome = nome;
-            Produto = produto;
-            Tipo = tipo;
-            Status = status;
+            
         }
     }
 }

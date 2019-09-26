@@ -76,4 +76,3 @@ C:\Users\Fillip Pereira\Desktop\monitoria\Monitoria\obj\Debug\Monitoria.csproj.C
 C:\Users\Fillip Pereira\Desktop\monitoria\Monitoria\obj\Debug\Monitoria.csproj.CopyComplete
 C:\Users\Fillip Pereira\Desktop\monitoria\Monitoria\obj\Debug\Monitoria.dll
 C:\Users\Fillip Pereira\Desktop\monitoria\Monitoria\obj\Debug\Monitoria.pdb
-C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\Monitoria.csprojAssemblyReference.cache

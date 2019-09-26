@@ -76,4 +76,5 @@ C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\SuperEntender.cspr
 C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\SuperEntender.csproj.CopyComplete
 C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\Monitoria.dll
 C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\Monitoria.pdb
-C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\SuperEntender.csprojAssemblyReference.cache
+C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\Monitoria.Migrations.Ficha.resources
+C:\Users\Fillip Pereira\Desktop\Monitoria\Monitoria\obj\Debug\SuperEntender.csproj.GenerateResource.cache

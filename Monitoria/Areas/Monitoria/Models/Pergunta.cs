@@ -12,5 +12,6 @@ namespace Monitoria.Areas.Monitoria.Models
         public int IdPergunta { get; set; }
         [Required]
         public string Nome { get; set; }
+        //public List<Resposta> Respostas { get; set; }
     }
 }

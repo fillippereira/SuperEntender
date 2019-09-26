@@ -20,5 +20,13 @@ namespace Monitoria.Models
         }
 
         public System.Data.Entity.DbSet<Monitoria.Models.Usuario> Usuario { get; set; }
+
+        public System.Data.Entity.DbSet<Monitoria.Areas.Monitoria.Models.Ficha> Fichas { get; set; }
+
+        public System.Data.Entity.DbSet<Monitoria.Areas.Monitoria.Models.Bloco> Blocos { get; set; }
+
+        public System.Data.Entity.DbSet<Monitoria.Areas.Monitoria.Models.Pergunta> Perguntas { get; set; }
+
+        public System.Data.Entity.DbSet<Monitoria.Areas.Monitoria.Models.Resposta> Respostas { get; set; }
     }
 }
