@@ -9,11 +9,13 @@ namespace Monitoria.Models
 {
     [System.ComponentModel.DataAnnotations.Schema.Table("Cargos", Schema = "dbo")]
     public class Cargo
-	{   [Key]
+    {
+        private MonitoriaContext db = new MonitoriaContext();
+
+        [Key]
         public int IdCargo { get; set; }
         public string NomeCargo { get; set; }
-        [NotMapped]
-        public List<Cargo> ListaCargo{ get; set; }
-    }
 
+      
+    }
 }

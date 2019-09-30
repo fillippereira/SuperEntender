@@ -1,11 +1,11 @@
-﻿
+﻿@using Monitoria.Models
 <!DOCTYPE html>
 <html style="height:100%">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css?version=12" rel="stylesheet" type="text/css" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -24,12 +24,13 @@
                         </div>
                         <div class="row mt-3 mb-5">
                             <div class="col-md-4">
-                                <img class="img-responsive rounded m-0 w-100" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
+                                <img class="img-responsive rounded m-0 w-100 h-100" src="~/Images/user-icon/@Session["UrlIcone"]" alt="User picture">
                             </div>
                             <div class="col-md-4">
                                 @if (Session["Nome"] != null)
                                 {
-                                    <span class="d-block text-light">@Session["Nome"].ToString()</span>
+                                    var NomeExibicao = new Usuario().NomeUsuario(Session["Nome"].ToString());
+                                    <span class="d-block text-light">@NomeExibicao</span>
                                     <span class="d-block text-muted">@Session["Cargo"].ToString()</span>
                                 }
                                 else
@@ -73,18 +74,15 @@
             <div class="col-md-10 p-0">
                 <div class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
                     <div class="container-fluid">
-                        <div class="navbar-header">
-                            <h4>@ViewContext.RouteData.Values["Controller"]</h4>
-                        </div>
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav"></ul>
-                        </div>
-                        <ul class="navbar-nav ml-auto mr-2">
+                        <a class="navbar-brand" href="/">@ViewContext.RouteData.Values["Controller"]</a>
+                          <ul class="navbar-nav mr-auto">  </ul> 
+                        
+                        <ul class="navbar-nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-bell"></i><span class="badge badge-pill badge-danger" style="position:relative;left:-4px;top:-10px">1</span></a></li>
                             <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-envelope"></i></a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    <img class="img-responsive rounded m-0" style="width: 30px" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
+                                    <img class="img-fluid rounded m-0" style="width: 30px;height:30px" src="~/Images/user-icon/@Session["UrlIcone"]" alt="User picture">
 
                                 </a>
                                 <div class="dropdown-menu">

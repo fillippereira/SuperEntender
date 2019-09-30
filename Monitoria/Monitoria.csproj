@@ -111,6 +111,8 @@
     <Content Include="Images\bg-login.png" />
     <Content Include="Images\icon.png" />
     <Compile Include="Models\Cargo.cs" />
+    <Content Include="Images\user-icon\user.jpg" />
+    <Content Include="Images\user-icon\vegeta.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -202,7 +204,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AccountViewModel.cs" />
+    <Compile Include="Models\Funcoes.cs" />
     <Compile Include="Models\MonitoriaContext.cs" />
     <Compile Include="Models\Papel.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -231,6 +234,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

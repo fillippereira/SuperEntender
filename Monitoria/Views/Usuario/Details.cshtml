@@ -1,68 +1,101 @@
 ﻿@model Monitoria.Models.Usuario
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.NavTitle = "Informações do Usuario";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cpf)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cpf)
-        </dd>
-
-        
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Login)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Login)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cargo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cargo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Senha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Senha)
-        </dd>
-
-    </dl>
+<div class="container-fluid p-0">
+    <div class="alert alert-success">
+        <strong>Sucesso!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Ação concluida
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUsuario }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="container">
+    <div class="card-body">
+        @if (TempData["message"] != null)
+        {
+            var message = TempData["message"];
+            <div class="alert alert-@TempData["class"]">
+                <strong></strong>
+                @message
+            </div>
+        }
+        
+        <div class="row">
+
+            <div class="col-md-4">
+                <img class="img-thumbnail w-100 h-100" src="~/Images/user-icon/@Session["UrlIcone"]" />
+
+
+            </div>
+            <div class="col-md-8">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cpf)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cpf)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Login)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Login)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cargo)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cargo.NomeCargo)
+                    </dd>
+
+                    <dd>
+                        @Html.ActionLink("Alterar Senha", "ChangePassword", "Account", new { id = Model.IdUsuario }, new { @class = "d-block" })
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @*@Html.ActionLink("Alterar Foto de perfil", "Index", "", new { @class = "d-block" })*@
+                @Html.ActionLink("Atualizar Informações", "Edit", new { id = Model.IdUsuario }, new { @class = "d-block" })
+                @Html.ActionLink("Sair", "LogOff", "Account", "", new { @class = "d-block" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Tema da Aplicação:</label>
+                <select class="form-control form-control-sm">
+                    <option>Padrão</option>
+                    <option>Escuro</option>
+                    <option>Azul</option>
+                    <option>Colorido</option>
+                </select>
+                <button class="btn btn-sm btn-success mt-3">Salvar alterações</button>
+                <button class="btn btn-sm btn-secondary mt-3">Descartar alterações</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

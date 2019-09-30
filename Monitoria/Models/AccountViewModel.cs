@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.WebPages.Html;
 
 namespace Monitoria.Models
 {
@@ -41,7 +42,7 @@ namespace Monitoria.Models
        
     }
 
-    public class RegisterModel
+    public class RegisterViewModel
     {
 
         [Required]
@@ -65,10 +66,36 @@ namespace Monitoria.Models
         [Compare("Senha", ErrorMessage = "A senha e a senha de confirmação não correspondem.")]
         public string ConfirmaSenha { get; set; }
         [Required]
-        public Cargo Cargo { get; set; }
+        public int IdCargo { get; set; }
 
-        public List<Cargo> ListaCargo { get; set; }
+        //public ICollection<Cargo> Cargo { get; set; }
+        public IEnumerable<SelectListItem> Cargo { get; set; }
+
+        //public List<Cargo> ListaCargo { get; set; }
         public int Status { get; set; }
+
+
+    }
+
+    public class ChangePasswordModel
+    {
+        [Required]
+        public int? IdUsuario { get; set; }
+
+        [Required]
+        [Display(Name = "Senha atual")]
+        public string SenhaAtual { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "A {0} deve ter no mínimo {2} caracteres.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Nova Senha")]
+        public string NovaSenha { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirmar senha")]
+        [Compare("NovaSenha", ErrorMessage = "A senha e a senha de confirmação não coincidem.")]
+        public string ConfirmaSenha { get; set; }
 
 
     }

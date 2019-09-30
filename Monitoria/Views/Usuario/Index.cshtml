@@ -29,9 +29,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Cargo)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -52,11 +50,9 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cargo)
+                @Html.DisplayFor(modelItem => item.Cargo.NomeCargo)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Senha)
-            </td>
+            
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.IdUsuario }) |
                 @Html.ActionLink("Details", "Details", new { id = item.IdUsuario }) |

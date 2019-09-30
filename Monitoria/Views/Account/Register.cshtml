@@ -1,4 +1,4 @@
-﻿@model Monitoria.Models.RegisterModel
+﻿@model Monitoria.Models.RegisterViewModel
 @{
     Layout = null;
     ViewBag.Title = "Monitoria - Registrar-se";
@@ -88,9 +88,7 @@
                             <div class="col-md-12">
                                 @Html.LabelFor(model => model.Cargo, htmlAttributes: new { @class = "control-label" })
 
-
-
-                                @Html.DropDownList("ListaCargos", null, String.Empty, new { @class = "form-control form-control-sm" })
+                                @Html.DropDownList("IdCargo",  (SelectList)ViewBag.Cargos, "[Selecione]", new { @class = "form-control form-control-sm" })
 
                                 @Html.ValidationMessageFor(model => model.Cargo, "", new { @class = "text-danger" })
 

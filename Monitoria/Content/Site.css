@@ -16,3 +16,7 @@ textarea {
     max-width: 280px;
 }
 
+.ml-auto .dropdown-menu {
+    left: auto !important;
+    right: 0px;
+}
